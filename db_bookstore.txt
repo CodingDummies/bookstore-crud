@@ -1,0 +1,51 @@
+CREATE DATABASE db_bookstore;
+USE db_bookstore;
+
+CREATE TABLE tbl_category (
+	category_id int primary key auto_increment,
+    category_name varchar(100) not null
+);
+
+CREATE TABLE tbl_author (
+	author_id int primary key auto_increment,
+    last_name varchar(100) not null,
+    first_name varchar(100) not null
+);
+
+CREATE TABLE tbl_books (
+	book_id int primary key auto_increment,
+    book_name varchar(100) not null,
+    category_id int not null,
+    author_id int not null,
+    publish_date date not null,
+    FOREIGN KEY (category_id) references tbl_category(category_id) ON DELETE CASCADE,
+	FOREIGN KEY (author_id) references tbl_author(author_id) ON DELETE CASCADE
+);
+
+INSERT INTO tbl_category (category_name) VALUES 
+('Fiction'),
+('Non-fiction'),
+('Mystery'),
+('Science Fiction'),
+('Biography');
+
+INSERT INTO tbl_author (last_name, first_name) VALUES
+('Rowling', 'J.K.'),
+('Tolkien', 'J.R.R.'),
+('King', 'Stephen'),
+('Brown', 'Dan'),
+('Hemingway', 'Ernest');
+
+INSERT INTO tbl_books (book_name, category_id, author_id, publish_date) VALUES
+('Harry Potter and the Philosopher''s Stone', 1, 1, '1997-06-26'),
+('The Hobbit', 1, 2, '1937-09-21'),
+('The Shining', 1, 3, '1977-01-28'),
+('The Da Vinci Code', 1, 4, '2003-03-18'),
+('The Old Man and the Sea', 1, 5, '1952-09-01');
+
+INSERT INTO tbl_genre (genre_name, book_id) VALUES
+('Fantasy', 1),
+('Adventure', 2),
+('Horror', 3),
+('Mystery', 4),
+('Literary Fiction', 5);
