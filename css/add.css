@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 1.25rem;
+}
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+main > .back {
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #d9d9d9;
+  margin-top: 2rem;
+  display: block;
+  width: fit-content;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+form {
+  width: 27rem;
+  margin: 1rem auto;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+
+form label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+form input {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  background-color: #d9d9d9;
+  border: none;
+  width: 15rem;
+  color: black;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  background-color: #72c57a;
+  cursor: pointer;
+}
+
+form .button-con {
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+form div .id {
+  background-color: transparent;
+  text-align: center;
+  font-weight: bold;
+  outline: none;
+  cursor: default;
+}
